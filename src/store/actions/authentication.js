@@ -15,9 +15,25 @@ export const checkForExpiredToken = () => {};
 
 export const login = userData => {};
 
-export const signup = userData => {};
+export const signup = (userData, history) => {
+  return dispatch => {
+    instance
+      .post("/signup/", userData)
+      .then(res => res.data)
+      .then(user => {
+        const decodedUser = jwt_decode(user.token);
+        setAuthToken(user.token);
+        dispatch(setCurrentUser(decodedUser));
+        history.push("/channels");
+      })
+      .catch(err => dispatch(setErrors(err.response.data)));
+  };
+};
 
-export const logout = () => {};
+export const logout = () => {
+  setAuthToken();
+  return setCurrentUser();
+};
 
 const setCurrentUser = user => ({
   type: actionTypes.SET_CURRENT_USER,

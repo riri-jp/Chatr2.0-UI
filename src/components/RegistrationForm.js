@@ -1,5 +1,8 @@
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
+import { connect } from "react-redux";
+import * as actionCreators from "../store/actions";
+import { dispatch } from "rxjs/internal/observable/range";
 
 class RegistationForm extends Component {
   state = {
@@ -13,7 +16,7 @@ class RegistationForm extends Component {
 
   submitHandler = e => {
     e.preventDefault();
-    alert("I don't work yet");
+    this.props.signup(this.state, this.props.history);
   };
 
   render() {
@@ -53,6 +56,7 @@ class RegistationForm extends Component {
           </form>
         </div>
         <div className="card-footer">
+          {" "}
           <Link
             to={type === "login" ? "/signup" : "/login"}
             className="btn btn-small btn-link"
@@ -67,4 +71,14 @@ class RegistationForm extends Component {
   }
 }
 
-export default RegistationForm;
+const mapDispatchToProps = dispatch => {
+  return {
+    signup: (userData, history) =>
+      dispatch(actionCreators.signup(userData, history))
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(RegistationForm);
