@@ -3,6 +3,8 @@ import { Switch, Route, Redirect } from "react-router-dom";
 
 // Scripts
 import main from "./assets/js/main";
+import { connect } from "react-redux";
+import * as actionCreators from "./store/actions";
 
 // Components
 import NavBar from "./components/Navigation/NavBar";
@@ -14,6 +16,7 @@ import SuperSecretPage from "./components/SuperSecretPage";
 
 class App extends Component {
   componentDidMount() {
+    this.props.checkToken();
     main();
   }
 
@@ -33,4 +36,13 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapDispatchToProps = dispatch => {
+  return {
+    checkToken: () => dispatch(actionCreators.checkForExpiredToken())
+  };
+};
+
+export default connect(
+  null,
+  mapDispatchToProps
+)(App);

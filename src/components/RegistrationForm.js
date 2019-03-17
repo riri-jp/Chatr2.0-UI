@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/actions";
-import { dispatch } from "rxjs/internal/observable/range";
+
 
 class RegistationForm extends Component {
   state = {
@@ -16,7 +16,11 @@ class RegistationForm extends Component {
 
   submitHandler = e => {
     e.preventDefault();
+    if(this.props.match.url.substring(1) ==="signup"){
     this.props.signup(this.state, this.props.history);
+    }else{
+    this.props.login(this.state, this.props.history);
+    }
   };
 
   render() {
@@ -71,12 +75,15 @@ class RegistationForm extends Component {
   }
 }
 
+
 const mapDispatchToProps = dispatch => {
   return {
     signup: (userData, history) =>
-      dispatch(actionCreators.signup(userData, history))
+      dispatch(actionCreators.signup(userData, history)),
+    login: (userData, history) => dispatch(actionCreators.login(userData,history))
   };
 };
+
 
 export default connect(
   null,
