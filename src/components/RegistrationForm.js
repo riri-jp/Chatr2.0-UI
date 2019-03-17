@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import * as actionCreators from "../store/actions";
 
-
 class RegistationForm extends Component {
   state = {
     username: "",
@@ -16,10 +15,10 @@ class RegistationForm extends Component {
 
   submitHandler = e => {
     e.preventDefault();
-    if(this.props.match.url.substring(1) ==="signup"){
-    this.props.signup(this.state, this.props.history);
-    }else{
-    this.props.login(this.state, this.props.history);
+    if (this.props.match.url.substring(1) === "signup") {
+      this.props.signup(this.state, this.props.history);
+    } else {
+      this.props.login(this.state, this.props.history);
     }
   };
 
@@ -75,15 +74,14 @@ class RegistationForm extends Component {
   }
 }
 
-
 const mapDispatchToProps = dispatch => {
   return {
     signup: (userData, history) =>
       dispatch(actionCreators.signup(userData, history)),
-    login: (userData, history) => dispatch(actionCreators.login(userData,history))
+    login: (userData, history) =>
+      dispatch(actionCreators.login(userData, history))
   };
 };
-
 
 export default connect(
   null,
