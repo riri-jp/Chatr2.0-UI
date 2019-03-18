@@ -45,7 +45,7 @@ export const login = (userData, history) => {
       let user = response.data;
       setAuthToken(user.token);
       dispatch(setCurrentUser(jwt_decode(user.token)));
-      history.push("/channels");
+      history.push("/private");
     } catch (error) {
       console.error(error.response.data);
     }
@@ -61,7 +61,7 @@ export const signup = (userData, history) => {
         const decodedUser = jwt_decode(user.token);
         setAuthToken(user.token);
         dispatch(setCurrentUser(decodedUser));
-        history.push("/channels");
+        history.push("/private");
       })
       .catch(err => dispatch(setErrors(err.response.data)));
   };
