@@ -38,7 +38,8 @@ class App extends Component {
 
 const mapDispatchToProps = dispatch => {
   return {
-    checkToken: () => dispatch(actionCreators.checkForExpiredToken())
+    checkToken: () => dispatch(actionCreators.checkForExpiredToken()),
+    getAllChannels: () => dispatch(actionCreators)
   };
 };
 
