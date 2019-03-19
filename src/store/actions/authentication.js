@@ -48,6 +48,7 @@ export const login = (userData, history) => {
       history.push("/private");
     } catch (error) {
       console.error(error.response.data);
+      alert("Wrong User Name Or password, Try Agaien Or Signup");
     }
   };
 };

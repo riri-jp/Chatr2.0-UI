@@ -19,6 +19,20 @@ body.fixed-nav {
   padding-top: 56px;
 }
 
+.app {
+  display: grid;
+  height: 100%;
+  grid-template-columns: repeat(6, 1fr);
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr 60px;
+  grid-template-areas:
+    "r m m m m m"
+    "r m m m m m"
+    "r m m m m m"
+    "r m m m m m"
+    "r m m m m m"
+    "n f f f f f";
+}
+
 .content-wrapper {
   min-height: calc(100vh - 56px);
   padding-top: 1rem;
@@ -176,6 +190,7 @@ body.fixed-nav {
     -ms-flex-direction: column;
     flex-direction: column;
     margin-top: 56px;
+    overflow: auto;
   }
   #mainNav .navbar-collapse .navbar-sidenav > .nav-item {
     width: 250px;

@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import React from "react";
 import * as actionCreators from "../../store/actions";
 
-
 // Fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,8 +13,6 @@ import {
 
 // Components
 import ChannelNavLink from "./ChannelNavLink";
-import { dispatch } from "rxjs/internal/observable/pairs";
-import { bindActionCreators } from "../../../../../Library/Caches/typescript/3.3/node_modules/redux";
 
 class SideNav extends React.Component {
   state = { collapsed: false };
@@ -38,7 +35,7 @@ class SideNav extends React.Component {
     const channelLinks = this.props.channels.map(channel => (
       <ChannelNavLink key={channel.name} channel={channel} />
     ));
-    const { open } = this.state;
+    const { collapsed } = this.state;
 
     if (!this.props.user) {
       return null;
@@ -64,13 +61,13 @@ class SideNav extends React.Component {
                 className="nav-link text-center"
                 id="sidenavToggler"
                 onClick={() =>
-                  this.setState(prevState => ({
-                    collapsed: !prevState.collapsed
-                  }))
+                  this.setState({
+                    collapsed: !collapsed
+                  })
                 }
               >
                 <FontAwesomeIcon
-                  icon={this.state.collapsed ? faAngleRight : faAngleLeft}
+                  icon={collapsed ? faAngleRight : faAngleLeft}
                 />
               </span>
             </li>

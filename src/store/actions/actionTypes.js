@@ -3,5 +3,4 @@ export const SET_ERRORS = "SET_ERRORS";
 
 export const FETCH_CHANNELS = "FETCH_CHANNELS";
 export const FETCH_CHANNEL = "FETCH_CHANNEL";
-export const CREATE_CHANNELS = "CREATE_CHANNELS";
-
+export const CREATE_CHANNEL = "CREATE_CHANNEL";

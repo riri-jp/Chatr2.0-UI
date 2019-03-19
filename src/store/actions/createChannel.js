@@ -6,13 +6,13 @@ const instance = axios.create({
   baseURL: "https://api-chatr.herokuapp.com/"
 });
 
-export const createChannel = channel => {
+export const CreateChannel = channel => {
   return async dispatch => {
     try {
       const response = await instance.post("/channels/create/", channel);
       const newChannel = response.data;
       dispatch({
-        type: actionTypes.CREATE_CHANNELS,
+        type: actionTypes.CREATE_CHANNEL,
         payload: newChannel
       });
     } catch (error) {
