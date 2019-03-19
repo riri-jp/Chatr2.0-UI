@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import React from "react";
 import * as actionCreators from "../../store/actions";
 
-
 // Fontawesome
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -14,16 +13,15 @@ import {
 
 // Components
 import ChannelNavLink from "./ChannelNavLink";
-import { dispatch } from "rxjs/internal/observable/pairs";
-import { bindActionCreators } from "../../../../../Library/Caches/typescript/3.3/node_modules/redux";
 
 class SideNav extends React.Component {
   state = { collapsed: false };
 
-  // componentDidMount(){
-  //   if(user !== this.props.user)
-
-  // }
+  componentDidMount() {
+    if (this.props.user) {
+      this.props.fetchChannels();
+    }
+  }
 
   componentDidUpdate(prevState) {
     if (prevState.user !== this.props.user) {
@@ -38,14 +36,19 @@ class SideNav extends React.Component {
     const channelLinks = this.props.channels.map(channel => (
       <ChannelNavLink key={channel.name} channel={channel} />
     ));
-    const { open } = this.state;
+
+    // const { open } = this.state;
 
     if (!this.props.user) {
       return null;
     } else {
       return (
         <div>
-          <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
+          <ul
+            className="navbar-nav navbar-sidenav"
+            id="exampleAccordion"
+            style={{ overflowY: "scroll" }}
+          >
             <li
               className="nav-item"
               data-toggle="tooltip"
