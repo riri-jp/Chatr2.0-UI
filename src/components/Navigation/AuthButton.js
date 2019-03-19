@@ -9,7 +9,7 @@ import {
   faSignInAlt,
   faUserPlus
 } from "@fortawesome/free-solid-svg-icons";
-import { dispatch } from "rxjs/internal/observable/range";
+// import { dispatch } from "rxjs/internal/observable/range";
 
 class AuthButton extends Component {
   render() {

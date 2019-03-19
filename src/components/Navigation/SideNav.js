@@ -17,10 +17,11 @@ import ChannelNavLink from "./ChannelNavLink";
 class SideNav extends React.Component {
   state = { collapsed: false };
 
-  // componentDidMount(){
-  //   if(user !== this.props.user)
-
-  // }
+  componentDidMount() {
+    if (this.props.user) {
+      this.props.fetchChannels();
+    }
+  }
 
   componentDidUpdate(prevState) {
     if (prevState.user !== this.props.user) {
@@ -35,14 +36,23 @@ class SideNav extends React.Component {
     const channelLinks = this.props.channels.map(channel => (
       <ChannelNavLink key={channel.name} channel={channel} />
     ));
+
+
+    // const { open } = this.state;
+
     const { collapsed } = this.state;
+
 
     if (!this.props.user) {
       return null;
     } else {
       return (
         <div>
-          <ul className="navbar-nav navbar-sidenav" id="exampleAccordion">
+          <ul
+            className="navbar-nav navbar-sidenav"
+            id="exampleAccordion"
+            style={{ overflowY: "scroll" }}
+          >
             <li
               className="nav-item"
               data-toggle="tooltip"

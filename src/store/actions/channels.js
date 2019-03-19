@@ -5,6 +5,9 @@ import axios from "axios";
 const instance = axios.create({
   baseURL: "https://api-chatr.herokuapp.com/"
 });
+export const setChLoading = () => ({
+  type: actionTypes.SET_CHANNELS_LOADING
+});
 
 export const fetchChannels = () => {
   return dispatch => {
@@ -17,11 +20,3 @@ export const fetchChannels = () => {
       .catch(error => console.error(error));
   };
 };
-export const fetchChannel = channelID => {
-  return {
-    type: actionTypes.FETCH_CHANNEL,
-    payload: channelID
-  };
-};
-
-export default fetchChannels;
