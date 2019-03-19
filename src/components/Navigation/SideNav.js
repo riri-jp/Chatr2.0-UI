@@ -37,7 +37,11 @@ class SideNav extends React.Component {
       <ChannelNavLink key={channel.name} channel={channel} />
     ));
 
+
     // const { open } = this.state;
+
+    const { collapsed } = this.state;
+
 
     if (!this.props.user) {
       return null;
@@ -67,13 +71,13 @@ class SideNav extends React.Component {
                 className="nav-link text-center"
                 id="sidenavToggler"
                 onClick={() =>
-                  this.setState(prevState => ({
-                    collapsed: !prevState.collapsed
-                  }))
+                  this.setState({
+                    collapsed: !collapsed
+                  })
                 }
               >
                 <FontAwesomeIcon
-                  icon={this.state.collapsed ? faAngleRight : faAngleLeft}
+                  icon={collapsed ? faAngleRight : faAngleLeft}
                 />
               </span>
             </li>
