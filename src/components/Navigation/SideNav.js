@@ -37,11 +37,9 @@ class SideNav extends React.Component {
       <ChannelNavLink key={channel.name} channel={channel} />
     ));
 
-
     // const { open } = this.state;
 
     const { collapsed } = this.state;
-
 
     if (!this.props.user) {
       return null;
