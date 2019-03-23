@@ -12,30 +12,26 @@ const instance = axios.create({
 const setAuthToken = token => {
   if (token) {
     localStorage.setItem("token", token);
-    axios.defaults.headers.common.Authorization = `jwt ${token}`;
+    axios.defaults.headers.common.Authorization = `JWT ${token}`;
   } else {
-    localStorage.removeItem("token");
     delete axios.defaults.headers.common.Authorization;
+    localStorage.removeItem("token");
   }
 };
 
 export const checkForExpiredToken = () => {
-  return dispatch => {
-    const token = localStorage.getItem("token");
+  const token = localStorage.getItem("token");
+  if (token) {
+    const currentTime = Date.now() / 1000;
 
-    if (token) {
-      const currentTime = Date.now() / 1000;
+    const user = jwt_decode(token);
 
-      const user = jwt_decode(token);
-
-      if (user.exp >= currentTime) {
-        setAuthToken(token);
-        dispatch(setCurrentUser(user));
-      } else {
-        dispatch(logout());
-      }
+    if (user.exp >= currentTime) {
+      setAuthToken(token);
+      return setCurrentUser(user);
     }
-  };
+  }
+  return logout();
 };
 
 export const login = (userData, history) => {

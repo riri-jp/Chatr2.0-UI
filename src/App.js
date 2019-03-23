@@ -18,7 +18,6 @@ import Channels from "./components/Channels";
 
 import ChannelForm from "./components/ChannelForm";
 
-
 class App extends Component {
   // componentDidMount() {
   //   this.props.fetchChannels();
@@ -30,7 +29,7 @@ class App extends Component {
         <NavBar />
         <Switch>
           <Route path="/welcome" component={Welcome} />
-          <Route path="/channels/:channelID" component={Channels} />
+          <Route path={`/channels/:channelID`} component={Channels} />
           <Route path="/(login|signup)" component={RegistrationForm} />
           <Route path="/createChannel" component={ChannelForm} />
           <PrivateRoute path="/private" component={SuperSecretPage} />
