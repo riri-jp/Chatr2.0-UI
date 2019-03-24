@@ -139,7 +139,7 @@ h1 {
   object-fit: cover;
   background-repeat: no-repeat;
   background-size: auto;
-  padding: 8px 20px 8px 340px;
+  /* padding: 8px 20px 8px 340px; */
 }
 
 [type="button"],
@@ -147,5 +147,5 @@ h1 {
 [type="submit"],
 button {
   padding: 8px 20px 8px 10px;
-  margin-left: 350px;
+  margin-left: 0px;
 }
