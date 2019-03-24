@@ -191,6 +191,7 @@ body.fixed-nav {
     flex-direction: column;
     margin-top: 56px;
     overflow: auto;
+    height:630px;
   }
   #mainNav .navbar-collapse .navbar-sidenav > .nav-item {
     width: 250px;

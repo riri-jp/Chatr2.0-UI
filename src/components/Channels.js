@@ -12,7 +12,7 @@ class Channel extends Component {
     this.interval = setInterval(() => {
       if (this.props.match.params.channelID !== undefined)
         this.props.fetchMessages(this.props.match.params.channelID);
-    }, 5000);
+    }, 1000);
   }
 
   componentDidUpdate(prevProps) {
@@ -26,7 +26,7 @@ class Channel extends Component {
         clearInterval(this.interval);
         this.interval = setInterval(() => {
           this.props.fetchMessages(this.props.match.params.channelID);
-        }, 5000);
+        }, 1000);
       }
     }
   }
@@ -43,10 +43,13 @@ class Channel extends Component {
           <Message key={msg.id + msg.username} message={msg} />
         ));
       return (
-        <div className="container shadow-lg p-3 mb-5 bg-white rounded">
+        <div
+          style={{ maxWidth: 680 }}
+          className="container shadow-lg p-3 mb-5 bg-white rounded"
+        >
           <div
             className="container p-3  "
-            style={{ overflowY: "auto", width: "auto", height: "500px" }}
+            style={{ overflowY: "auto", width: "auto", height: "330px" }}
           >
             {messageList}
           </div>

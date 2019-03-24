@@ -49,8 +49,8 @@ class ChannelForm extends Component {
             name="imageUrl"
             onChange={this.onTextchange}
           />
+          <input type="submit" />
         </div>
-        <input type="submit" />
       </form>
     );
   }

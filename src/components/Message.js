@@ -7,8 +7,11 @@ class Message extends Component {
     var float = "";
     var row = "row";
     var margUser = "ml-3";
+    console.log("this user : ", this.props.user.username);
+    console.log("this message : ", this.props.message.username);
+
     if (this.props.message.username === this.props.user.username) {
-      userFormatter = "#750E0F";
+      userFormatter = "#3c7a89";
       float = "float-right";
       row = "";
       margUser = "mr-3";
@@ -28,7 +31,7 @@ class Message extends Component {
                   color: "white"
                 }}
               >
-                {message.username}
+                <h7 class="slideInUp bounce delay-2s">{message.username}</h7>
               </span>
             </h4>
             <div className={` mt-1 ${margUser} ${float}`}>
