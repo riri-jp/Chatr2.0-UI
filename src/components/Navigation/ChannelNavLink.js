@@ -13,6 +13,8 @@ class ChannelNavLink extends Component {
         className="nav-item"
         data-toggle="tooltip"
         data-placement="right"
+        height="10px"
+        border-collapse="collapse"
         title={channel.name}
       >
         <NavLink className="nav-link" to={`/channels/${channel.id}`}>

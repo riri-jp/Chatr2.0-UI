@@ -13,7 +13,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Welcome from "./components/Welcome";
 import RegistrationForm from "./components/RegistrationForm";
 import SuperSecretPage from "./components/SuperSecretPage";
-
+import "./assets/css/custom.css";
 import Channels from "./components/Channels";
 
 import ChannelForm from "./components/ChannelForm";
@@ -25,14 +25,17 @@ class App extends Component {
 
   render() {
     return (
-      <div className="content-wrapper">
+      <div className="a ">
         <NavBar />
         <Switch>
           <Route path="/welcome" component={Welcome} />
-          <Route path={`/channels/:channelID`} component={Channels} />
+
+
+          <Route path="/channels/:channelID" component={Channels} />
+
           <Route path="/(login|signup)" component={RegistrationForm} />
           <Route path="/createChannel" component={ChannelForm} />
-          <PrivateRoute path="/private" component={SuperSecretPage} />
+            <PrivateRoute path="/private" component={SuperSecretPage} />
           <Redirect to="/welcome" />
         </Switch>
         <Footer />

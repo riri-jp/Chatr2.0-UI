@@ -42,7 +42,7 @@ class AuthButton extends Component {
     return (
       <ul className="navbar-nav ml-auto">
         {this.props.user && (
-          <span className="navbar-text">{user.username}</span>
+          <span className="navbar-text">{user.username} &nbsp; &nbsp;</span>
         )}
         {buttons}
       </ul>

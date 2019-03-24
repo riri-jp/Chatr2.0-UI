@@ -15,8 +15,8 @@ const reducer = (state = initialState, action) => {
       };
     case actionTypes.POST_MESSAGE:
       return {
-        ...state,
-        messages: state.messages.concat(action.payload)
+        ...state
+        // messages: state.messages.concat(action.payload)
       };
     case actionTypes.SET_MESSAGES_LOADING:
       return {

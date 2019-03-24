@@ -39,8 +39,7 @@ class MessageForm extends Component {
               onChange={this.changeHandler}
             />
           </div>
-
-          <input className="btn btn-primary" type="submit" value="Send" />
+          <input className="btn " type="submit" value="Send" />
         </form>
       </div>
     );

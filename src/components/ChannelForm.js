@@ -41,6 +41,21 @@ class ChannelForm extends Component {
               />
             </div>
 
+
+        <div className="input-group mb-3">
+          <div className="input-group-prepend">
+            <span className="input-group-text">Image URL</span>
+          </div>
+          <input
+            type="text"
+            className="form-control"
+            name="imageUrl"
+            onChange={this.onTextchange}
+          />
+          <input type="submit" />
+        </div>
+      </form>
+
             <div className="input-group mb-3">
               <div className="input-group-prepend">
                 <span className="input-group-text">Image URL</span>
@@ -56,6 +71,7 @@ class ChannelForm extends Component {
           </form>
         </div>
       </div>
+
     );
   }
 }

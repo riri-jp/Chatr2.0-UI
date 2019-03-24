@@ -1,0 +1,151 @@
+body {
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+}
+.a {
+  padding-top: 0;
+  background: none;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+}
+.bg-dark {
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: auto;
+}
+
+#mainNav .navbar-collapse .navbar-sidenav {
+  padding: 8px 8px 8px 32px;
+  color: #818181 !important;
+  display: block !important;
+  transition: 0.3s !important;
+}
+
+.bg-light {
+  background: #dddbdb !important;
+}
+
+.bg-white {
+  background: rgb(237, 237, 237) !important;
+  transition: 0.3s !important;
+  text-align: left;
+}
+
+.navbar-nav {
+  background: rgb(0, 0, 0) !important;
+  transition: 0.3s !important;
+  transition: 10s !important;
+}
+.navbar {
+  background: rgb(157, 157, 157) !important;
+}
+
+.nav-item {
+  background: rgb(91, 91, 91) !important;
+  background-image: url(https://www.rxwallpaper.site/wp-content/uploads/black-white-red-wallpaper-download-red-and-black-wallpaper-hd.jpg);
+}
+.navbar-nav {
+  background: #3c7a89 !important;
+  transition: 0.9s !important;
+}
+.float {
+  color: #eeeeee !important;
+}
+.badge {
+  color: #eeeeee !important;
+}
+.card-title {
+  color: #c5c3c6 !important;
+}
+.h1,
+h1 {
+  color: #2e4756 !important;
+}
+.bg-dark {
+  background: #c5c3c6 !important;
+}
+
+.nav-item {
+  background: #3c7a89 !important;
+}
+.navbar {
+  background: #2e4756 !important;
+  margin-bottom: 20px;
+}
+
+.rounded {
+  border-radius: 0;
+}
+
+#mainNav.navbar-dark
+  .navbar-collapse
+  .navbar-sidenav
+  > .nav-item
+  > .nav-link.active {
+  border-left: 3px solid #2e4756;
+  color: #fff;
+}
+
+#mainNav.navbar-dark
+  .navbar-collapse
+  .navbar-sidenav
+  > .nav-item
+  > .nav-link:hover {
+  border-left: 3px solid #2e4756;
+  color: #fff;
+}
+.navbar-text {
+  background: #2e4756;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+}
+.classname {
+  background: red;
+}
+
+.btn {
+  background: #2e4756;
+  border: solid 1px #2e4756;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+}
+.btn-link {
+  background: #c9c9c9;
+  border: solid 1px #3c7a89;
+  color: #01252e;
+}
+.btn-link:hover {
+  background: #c9c9c9;
+  border: solid 1px #01252e;
+}
+.btn:hover {
+  color: #a7b7bb;
+  border: solid 1px #3c7a89;
+}
+#mainNav.navbar-dark .navbar-collapse .navbar-sidenav > .nav-item > .nav-link {
+  transition: all 0.2s ease-out;
+  color: #2e4756;
+  font-family: "Quicksand", sans-serif;
+  font-size: 18px;
+}
+
+.mb-5 {
+  transition: all 0.2s ease-out;
+  color: #2e4756;
+}
+
+.mb-3,
+.my-3 {
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-size: auto;
+  padding: 8px 20px 8px 340px;
+}
+
+[type="button"],
+[type="reset"],
+[type="submit"],
+button {
+  padding: 8px 20px 8px 10px;
+  margin-left: 350px;
+}
