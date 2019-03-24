@@ -11,10 +11,9 @@ class Message extends Component {
     console.log("this user : ", this.props.user.username);
     console.log("this message : ", this.props.message.username);
 
-=======
-    let float = "";
-    let row = "row";
-    let margUser = "ml-3";
+    // let float = "";
+    // let row = "row";
+    // let margUser = "ml-3";
 
     if (this.props.message.username === this.props.user.username) {
       userFormatter = "#3c7a89";
