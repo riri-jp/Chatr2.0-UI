@@ -30,12 +30,12 @@ class App extends Component {
         <Switch>
           <Route path="/welcome" component={Welcome} />
 
+
           <Route path="/channels/:channelID" component={Channels} />
+
           <Route path="/(login|signup)" component={RegistrationForm} />
           <Route path="/createChannel" component={ChannelForm} />
-          <h1 class="animated zoomInUp	 bounce delay-2s fast-800ms">
             <PrivateRoute path="/private" component={SuperSecretPage} />
-          </h1>
           <Redirect to="/welcome" />
         </Switch>
         <Footer />

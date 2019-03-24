@@ -52,18 +52,18 @@ class SideNav extends React.Component {
             style={{ overflowY: "scroll" }}
           >
             <li
-              className="nav-item"
+              className="nav-item "
               data-toggle="tooltip"
               data-placement="right"
             >
               <Link className="nav-link heading" to="/createChannel">
-                <span className="nav-link-text mr-2">Channels</span>
+                <span className="nav-link-text mr-2">Create Channel</span>
                 <FontAwesomeIcon icon={faPlusCircle} />
               </Link>
             </li>
             {channelLinks}
           </ul>
-          <ul className="navbar-nav sidenav-toggler">
+          {/* <ul className="navbar-nav sidenav-toggler">
             <li className="nav-item">
               <span
                 className="nav-link text-center"
@@ -79,7 +79,7 @@ class SideNav extends React.Component {
                 />
               </span>
             </li>
-          </ul>
+          </ul> */}
         </div>
       );
     }

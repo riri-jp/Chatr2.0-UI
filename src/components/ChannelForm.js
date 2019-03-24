@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-
+import { withRouter } from "react-router-dom";
 // Actions
 import * as actionCreators from "../store/actions";
 
@@ -17,7 +17,7 @@ class ChannelForm extends Component {
 
   submitChannel(event) {
     event.preventDefault();
-    this.props.CreateChannel(this.state);
+    this.props.CreateChannel(this.state, this.props.history);
   }
 
   onTextchange(event) {
@@ -26,18 +26,21 @@ class ChannelForm extends Component {
 
   render() {
     return (
-      <form onSubmit={this.submitChannel}>
-        <div className="input-group mb-3">
-          <div className="input-group-prepend">
-            <span className="input-group-text">Name</span>
-          </div>
-          <input
-            type="text"
-            className="form-control"
-            name="name"
-            onChange={this.onTextchange}
-          />
-        </div>
+      <div className="card col-6 mx-auto p-0 mt-5">
+        <div className="card-body">
+          <form onSubmit={this.submitChannel}>
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text">Name</span>
+              </div>
+              <input
+                type="text"
+                className="form-control"
+                name="name"
+                onChange={this.onTextchange}
+              />
+            </div>
+
 
         <div className="input-group mb-3">
           <div className="input-group-prepend">
@@ -52,18 +55,37 @@ class ChannelForm extends Component {
           <input type="submit" />
         </div>
       </form>
+
+            <div className="input-group mb-3">
+              <div className="input-group-prepend">
+                <span className="input-group-text">Image URL</span>
+              </div>
+              <input
+                type="text"
+                className="form-control"
+                name="imageUrl"
+                onChange={this.onTextchange}
+              />
+            </div>
+            <input type="submit" />
+          </form>
+        </div>
+      </div>
+
     );
   }
 }
 
 const mapDispatchToProps = dispatch => {
   return {
-    CreateChannel: newChannel =>
-      dispatch(actionCreators.CreateChannel(newChannel))
+    CreateChannel: (newChannel, history) =>
+      dispatch(actionCreators.CreateChannel(newChannel, history))
   };
 };
 
-export default connect(
-  null,
-  mapDispatchToProps
-)(ChannelForm);
+export default withRouter(
+  connect(
+    null,
+    mapDispatchToProps
+  )(ChannelForm)
+);

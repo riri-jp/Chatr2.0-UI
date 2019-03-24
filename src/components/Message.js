@@ -4,11 +4,17 @@ import { connect } from "react-redux";
 class Message extends Component {
   render() {
     let userFormatter = "#3E4E59";
+
     var float = "";
     var row = "row";
     var margUser = "ml-3";
     console.log("this user : ", this.props.user.username);
     console.log("this message : ", this.props.message.username);
+
+=======
+    let float = "";
+    let row = "row";
+    let margUser = "ml-3";
 
     if (this.props.message.username === this.props.user.username) {
       userFormatter = "#3c7a89";
@@ -17,7 +23,7 @@ class Message extends Component {
       margUser = "mr-3";
     }
     const message = this.props.message;
-    var dateFormat = require("dateformat");
+    let dateFormat = require("dateformat");
 
     return (
       <div>
